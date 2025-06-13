@@ -50,7 +50,7 @@ class Before_After_Widget extends Widget_Base {
 	 * @return string[]
 	 */
 	public function get_categories() {
-		return array( 'basic' );
+		return array( 'roofengine-category' );
 	}
 
 	/**

@@ -49,7 +49,7 @@ class Slide_Up_Card_Widget extends Widget_Base {
 	 * @return array Categories array.
 	 */
 	public function get_categories() {
-		return array( 'general' );
+		return array( 'roofengine-category' );
 	}
 
 	/**

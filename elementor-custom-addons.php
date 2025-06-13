@@ -4,6 +4,7 @@
  * Description: Before/after image comparison widget to Elementor and much more...
  * Version: 1.0
  * Author: Volodymyr Kamuz
+ * Author URI: https://wpdev.pp.ua/
  *
  * @package BeforeAfterElementor
  */
@@ -69,3 +70,17 @@ function kamuz_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'kamuz_enqueue_scripts' );
 
+/**
+ * Register custom Elementor widget category.
+ *
+ * Adds a new category "RoofEngine" to the Elementor editor
+ * so custom widgets can be grouped under it.
+ *
+ * @param \Elementor\Elements_Manager $elements_manager Elementor elements manager instance.
+ *
+ * @return void
+ */
+function kamuz_custom_widget_category( $elements_manager ) {
+	$elements_manager->add_category( 'roofengine-category', array( 'title' => __( 'RoofEngine', 'kamuz-addon' ) ) );
+}
+add_action( 'elementor/elements/categories_registered', 'kamuz_custom_widget_category' );

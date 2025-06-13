@@ -54,12 +54,6 @@
 	transition: color 0.3s;
 }
 
-.custom-card:hover .icon i,
-.custom-card:hover .card-title,
-.custom-card:hover .card-text {
-	color: white;
-}
-
 .card-title {
 	font-size: 24px;
 	margin-bottom: 20px;
@@ -77,6 +71,17 @@
 	bottom: 0;
 	left: 0;
 	transition: all 0.5s ease-out;
+}
+
+.custom-card:hover .icon i,
+.custom-card:hover .card-title,
+.custom-card:hover .card-text {
+	color: white;
+}
+
+
+.custom-card:hover .card-title:after {
+	background-color: #fff;
 }
 
 .card-text {
