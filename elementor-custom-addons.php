@@ -13,18 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers the Before/After widget with Elementor.
+ * Registers the custom widgets with Elementor.
  *
  * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager instance.
  */
 function kamuz_register_widget( $widgets_manager ) {
 	require_once __DIR__ . '/widgets/class-before-after-widget.php';
+	require_once __DIR__ . '/widgets/class-slide-up-card-widget.php';
 	$widgets_manager->register( new \Before_After_Widget() );
+	$widgets_manager->register( new \Slide_Up_Card_Widget() );
 }
 add_action( 'elementor/widgets/register', 'kamuz_register_widget' );
 
 /**
- * Registers scripts and styles for the Before/After widget.
+ * Registers scripts and styles for custom widgets.
  */
 function kamuz_enqueue_scripts() {
 	wp_enqueue_script(
@@ -57,5 +59,13 @@ function kamuz_enqueue_scripts() {
 		'1.0.0',
 		true
 	);
+
+	wp_enqueue_style(
+		'kamuz-slide-up-card',
+		plugin_dir_url( __FILE__ ) . 'assets/css/slide-up-card.css',
+		array(),
+		'1.0.0'
+	);
 }
 add_action( 'wp_enqueue_scripts', 'kamuz_enqueue_scripts' );
+
