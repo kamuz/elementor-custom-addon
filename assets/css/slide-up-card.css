@@ -54,7 +54,7 @@
 	transition: color 0.3s;
 }
 
-.card-title {
+.card-content .card-title {
 	font-size: 24px;
 	margin-bottom: 20px;
 	padding-bottom: 15px;
@@ -62,7 +62,7 @@
 
 }
 
-.card-title:after {
+.card-content .card-title:after {
 	content: "";
 	height: 4px;
 	width: 28px;
